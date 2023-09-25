@@ -1,0 +1,71 @@
+<!--Success-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User Information Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        input:invalid,
+        select:invalid {
+            border-color: red;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="red" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13h-2v-2h2v2zm0-4h-2V7h-2v2h-2v2h2v2h2v-2h2z"/></svg>');
+            background-position: right calc(1em + 2px) center;
+            background-repeat: no-repeat;
+            padding-right: 32px;
+        }
+
+        .prompt {
+            color: red;
+            font-style: italic;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                <span class="prompt">Please supply your Name</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <span class="prompt">Please supply your Email</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <span class="prompt">Please supply your Password</span>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <select class="form-control" id="hobbies" required>
+                    <option selected disabled>Choose...</option>
+                    <option>Sport 1</option>
+                    <option>Sport 2</option>
+                    <option>Sport 3</option>
+                    <option>Sport 4</option>
+                    <option>Sport 5</option>
+                    <option>Sport 6</option>
+                    <option>Sport 7</option>
+                    <option>Sport 8</option>
+                    <option>Sport 9</option>
+                    <option>Sport 10</option>
+                </select>
+                <span class="prompt">Please select a Hobby</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

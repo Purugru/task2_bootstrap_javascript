@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-image: url('9de1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .form-container label, .form-container input, .form-container textarea, .form-container select {
+            display: block;
+            width: calc(100% - 10px);
+            margin-bottom: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .form-container input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <form onsubmit="return validateForm()">
+            <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><span id="firstNameError" class="error"></span><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><span id="lastNameError" class="error"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><span id="emailError" class="error"></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><span id="passwordError" class="error"></span><br>
+
+        <label for="confirmPassword">Re-enter Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><span id="confirmPasswordError" class="error"></span><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female" required> Female
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><span id="ageError" class="error"></span><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required><span id="phoneNumberError" class="error"></span><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><span id="addressError" class="error"></span><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><span id="stateError" class="error"></span><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+        </select><span id="countryError" class="error"></span><br>
+
+        <label>Languages Known:</label>
+        <input type="checkbox" name="languages" value="English"> English
+        <input type="checkbox" name="languages" value="Kannada"> Kannada
+        <input type="checkbox" name="languages" value="Hindi"> Hindi
+        <input type="checkbox" name="languages" value="Telugu"> Telugu
+        <br>
+
+        <label>
+            <input type="checkbox" required> Hereby I declare all the given details are true
+        </label><br>
+
+        <p>Login to <a href="https://www.ethnus.com/"> Ethnus </a>website</p></form><br>
+
+        <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let valid = true;
+
+            // First Name validation
+            let firstName = document.getElementById('firstName').value;
+            let firstNameError = document.getElementById('firstNameError');
+            if (!/^[a-zA-Z]+$/.test(firstName)) {
+                firstNameError.textContent = "POOR";
+                valid = false;
+            } else {
+                firstNameError.textContent = "";
+            }
+
+            // Last Name validation
+            let lastName = document.getElementById('lastName').value;
+            let lastNameError = document.getElementById('lastNameError');
+            if (!/^[a-zA-Z]+$/.test(lastName)) {
+                lastNameError.textContent = "POOR";
+                valid = false;
+            } else {
+                lastNameError.textContent = "";
+            }
+
+            // Email validation
+            let email = document.getElementById('email').value;
+            let emailError = document.getElementById('emailError');
+            if (!email) {
+                emailError.textContent = "POOR";
+                valid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Password validation
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+            let passwordError = document.getElementById('passwordError');
+            let confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (!password) {
+                passwordError.textContent = "POOR";
+                valid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+            if (password !== confirmPassword) {
+                confirmPasswordError.textContent = "MISMATCH";
+                valid = false;
+            } else {
+                confirmPasswordError.textContent = "";
+            }
+
+            // Age validation
+            let age = document.getElementById('age').value;
+            let ageError = document.getElementById('ageError');
+            if (!/^\d+$/.test(age) || age < 1 || age > 150) {
+                ageError.textContent = "POOR";
+                valid = false;
+            } else {
+                ageError.textContent = "";
+            }
+
+            // Phone Number validation
+            let phoneNumber = document.getElementById('phoneNumber').value;
+            let phoneNumberError = document.getElementById('phoneNumberError');
+            if (!/^\d{10}$/.test(phoneNumber)) {
+                phoneNumberError.textContent = "POOR";
+                valid = false;
+            } else {
+                phoneNumberError.textContent = "";
+            }
+
+            // Address validation
+            let address = document.getElementById('address').value;
+            let addressError = document.getElementById('addressError');
+            if (!address) {
+                addressError.textContent = "POOR";
+                valid = false;
+            } else {
+                addressError.textContent = "";
+            }
+
+            // State validation
+            let state = document.getElementById('state').value;
+            let stateError = document.getElementById('stateError');
+            if (!state) {
+                stateError.textContent = "POOR";
+                valid = false;
+            } else {
+                stateError.textContent = "";
+            }
+
+            // Country validation
+            let country = document.getElementById('country').value;
+            let countryError = document.getElementById('countryError');
+            if (!country) {
+                countryError.textContent = "POOR";
+                valid = false;
+            } else {
+                countryError.textContent = "";
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>

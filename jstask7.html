@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Animation</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  #rocketContainer {
+    position: relative;
+    flex-grow: 1;
+  }
+  #rocket {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: transform 1s;
+  }
+  #buttonContainer {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  #headingContainer {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px; /* Adjust as needed */
+  }
+</style>
+</head>
+<body>
+  <div id="headingContainer">
+    <h1>Watch the amazing Soviet Rocket Buran Energia leave your screen in 15fps with the push of your button</h1>
+  </div>
+  <div id="buttonContainer">
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <button id="restartButton">Restart</button>
+  </div>
+  <div id="rocketContainer">
+    <img id="rocket" src="rocket2.png" alt="Rocket">
+  </div>
+  <script>
+    let rocketInterval;
+
+    function moveRocket() {
+      const rocket = document.getElementById('rocket');
+      const currentBottom = parseInt(getComputedStyle(rocket).bottom);
+      rocket.style.bottom = currentBottom + 10 + 'px';
+    }
+
+    document.getElementById('startButton').addEventListener('click', () => {
+      rocketInterval = setInterval(moveRocket, 100);
+    });
+
+    document.getElementById('stopButton').addEventListener('click', () => {
+      clearInterval(rocketInterval);
+    });
+
+    document.getElementById('restartButton').addEventListener('click', () => {
+      clearInterval(rocketInterval);
+      const rocket = document.getElementById('rocket');
+      rocket.style.bottom = '50%';
+    });
+  </script>
+</body>
+</html>

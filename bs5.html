@@ -1,0 +1,96 @@
+<!--Success-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Input Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        input:invalid {
+            border-color: red;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="red" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13h-2v-2h2v2zm0-4h-2V7h-2v2h-2v2h2v2h2v-2h2z"/></svg>');
+            background-position: right calc(1em + 2px) center;
+            background-repeat: no-repeat;
+            padding-right: 32px;
+        }
+
+        .prompt {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName"><i class="fa fa-user"></i> First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                    <span class="prompt">Please supply your First Name</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName"><i class="fa fa-user"></i> Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                    <span class="prompt">Please supply your Last Name</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <span class="prompt">Please supply your Email</span>
+            </div>
+            <div class="form-group">
+                <label for="phone"><i class="fa fa-phone"></i> Phone#</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Phone#" required>
+                <span class="prompt">Please supply your Phone#</span>
+            </div>
+            <div class="form-group">
+                <label for="address"><i class="fa fa-home"></i> Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Address" required>
+                <span class="prompt">Please supply your Address</span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city"><i class="fa fa-home"></i> City</label>
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                    <span class="prompt">Please supply your City</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="state"><i class="fa fa-book"></i> State</label>
+                    <select id="state" class="form-control" required>
+                        <option selected disabled>Choose...</option>
+                        <option>Andhra Pradesh</option>
+                        <!-- Add other states here -->
+                    </select>
+                    <span class="prompt">Please select your State</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hosting"><i class="fa fa-check"></i> Do you have hosting?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="hosting" id="hostingYes" value="yes" required>
+                    <label class="form-check-label" for="hostingYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="hosting" id="hostingNo" value="no" required>
+                    <label class="form-check-label" for="hostingNo">No</label>
+                </div>
+                <span class="prompt">Please answer the hosting question</span>
+            </div>
+            <div class="form-group">
+                <label for="projectDescription"><i class="fa fa-pencil"></i> Project Description</label>
+                <textarea class="form-control" id="projectDescription" rows="3" required></textarea>
+                <span class="prompt">Please supply your Project Description</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

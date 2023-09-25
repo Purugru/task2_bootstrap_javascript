@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date, Time, and Timezone</title>
+</head>
+<body>
+    <h1>Display Current Date, Time, and Timezone</h1>
+    
+    <button onclick="showCurrentDate()">Show Current Date</button>
+    <p id="currentDate"></p>
+    
+    <button onclick="showCurrentTime()">Show Current Time</button>
+    <p id="currentTime"></p>
+
+    <script>
+        function showCurrentDate() {
+            var currentDate = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var formattedDate = currentDate.toLocaleDateString(undefined, options);
+            document.getElementById("currentDate").textContent = "Current Date: " + formattedDate;
+        }
+
+        function showCurrentTime() {
+            var currentTime = new Date();
+            var formattedTime = currentTime.toLocaleTimeString();
+            var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById("currentTime").textContent = "Current Time: " + formattedTime + " (Timezone: " + timezone + ")";
+        }
+    </script>
+</body>
+</html>

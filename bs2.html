@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Builderz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Added Font Awesome for icons -->
+    <style>
+        .navbar {
+            background-color: yellow;
+            border-bottom: 2px solid blue;
+            justify-content: space-between; /* Added to create space between components */
+        }
+        .navbar-brand {
+            color: blue;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: blue;
+        }
+        .navbar-nav .nav-item .nav-link:hover {
+            color: white;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .contact-info i {
+            font-size: 24px;
+            margin-bottom: 0.1rem;
+        }
+        .contact-info p {
+            margin: 0;
+            font-size: 14px; /* Smaller font size */
+            margin-bottom: 0.1rem; /* Increased space between details */
+        }
+        .info-title {
+            font-size: 20px; /* Increased font size */
+            font-weight: bold;
+            margin-bottom: 0.1rem;
+        }
+        .divider {
+            height: 1rem;
+            width: 100%; /* Full width */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Builderz</a>
+        <div class="navbar-nav ml-auto contact-info">
+            <div class="divider"></div>
+            <div class="d-flex align-items-center flex-column">
+                <i class="fas fa-calendar mr-2"></i>  
+            </div>
+            <div class="d-flex align-items-center flex-column">
+                <p class="info-title mb-0">Opening Hours</p>
+                <p class="small mb-0">Mon-Fri, 8:00-9:00</p>
+            </div>
+            <div class="divider"></div>
+            <div class="d-flex align-items-center flex-column">
+                <i class="fas fa-phone mr-2"></i>  
+            </div>
+            <div class="d-flex align-items-center flex-column">
+                <p class="info-title mb-0">Contact Us</p>
+                <p class="small mb-0">123-456-7890</p>
+            </div>
+            <div class="divider"></div>
+            <div class="d-flex align-items-center flex-column">
+                <i class="fas fa-envelope mr-2"></i>
+            </div>
+            <div class="d-flex align-items-center flex-column">
+                <p class="info-title mb-0">Email Us</p>
+                <p class="small mb-0">info@example.com</p>
+            </div>
+            <div class="divider"></div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- ... (rest of the code remains the same) -->
+    </nav>
+
+    <!-- Content goes here -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
